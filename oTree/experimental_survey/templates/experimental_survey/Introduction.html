@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Welcome to the experiment
+{% endblock %}
+
+{% block content %}
+    <p>
+    You are now taking part in an economic experiment. If you read the following instructions carefully, you can,
+    depending on your decision, earn a considerable amount of money. It is therefore very important that you read these
+    instructions with care. It is prohibited to communicate with the other participants during the experiment.
+    Should you have any questions please ask us. If you violate this rule, we shall have to exclude you from the experiment
+    and all payments.
+    </p>
+    <p> During the experiment we will not speak of Euros but of (experimental) points. During the experiment
+    your entire earnings will be calculated in points. At the end of the experiment the total number of points
+    you have earned will be converted to Euros at the following rate:
+    </p>
+    <p>
+    1 point = 0.05€ = 5 Eurocents
+    </p>
+    <p>
+    This experiment is conducted in up to two stages and your earnings and the
+    number of stages you will take part in depend on your behavior in the experiment.
+    The first stage of the experiment takes place now. The second stage take place in exactly one week.
+    You will be notified tomorrow whether you will participate in the second stage.
+    </p>
+    <p>
+    First we will ask you some questions about your age and gender.
+    Afterwards, we will explain the first stage of the experiment to you. Then you have to answer five control questions
+    to reflect your understanding of the game. Only after having answered all five control questions correctly, you will be
+    allowed to play the first stage of the experiment.
+    </p>
+    {% next_button %}
+
+{% endblock %}

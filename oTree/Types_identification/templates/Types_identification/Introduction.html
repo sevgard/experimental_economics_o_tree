@@ -1,0 +1,45 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Welcome to the second part of the experiment!
+{% endblock %}
+{% block content %}
+<style>
+div {
+    text-align: justify;
+    text-justify: inter-word;
+}
+</style>
+<div>
+<p>
+    You may remember participating in the first stage of the experiment.
+    At that time you provided information on conditional investment decisions, indicating how many
+    points you were willing to invest in the project for each possible
+    average investment level of the three other group members. Based on these decisions,
+    we have classified you and everyone else participating in the study as either
+    Type A, Type B, Type C, or Type D:
+    <ul>
+    <li><b>Type A</b> people invest either nothing or a very low amount in the project, no matter what other people do;</li>
+      <li><b>Type B</b>  people invest more in the project as other people in their group invest more in the project;</li>
+      <li><b>Type C</b>  people invest a high amount in the project, no matter what other people in their group do;</li>
+      <li><b>Type D</b>  people make their investment decision in some other way (not one of those listed above).</li>
+    </ul>
+</p>
+<p>
+    <b> You have been classified as a Type {{player_type}} player. </b>
+</p>
+
+
+<p>
+    <b>REMINDER:</b> You are now taking part in an economic experiment, in which you can, depending on your decision,
+    earn a considerable amount of money. It is therefore very important that you read the
+    <b>Instructions</b> on the next page with care. It is prohibited to communicate with the other participants during
+    the experiment. Should you have any questions please raise your hand and wait for assistance.
+    If you violate these rules, we shall have to exclude you from the experiment and all payments.
+</p>
+</div>
+    {% next_button %}
+{% endblock %}
+
+

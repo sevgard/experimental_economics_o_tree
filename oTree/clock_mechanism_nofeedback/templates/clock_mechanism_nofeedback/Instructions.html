@@ -1,0 +1,54 @@
+{% load otree staticfiles %}
+<style>
+div {
+    text-align: justify;
+    text-justify: inter-word;
+}
+</style>
+<div class="instructions well well-lg">
+
+    <h3 class="panel-sub-heading">
+        Instructions
+    </h3>
+
+    <p>
+        In this study, you will play in a formed group
+        of {{ Constants.players_per_group }} participants. Each participant in
+        the group is given {{ Constants.endowment }}. The group
+        has the opportunity to undertake a joint project. Each participant in
+        the group decides how much she or he is going to invest in
+        the project.
+    </p>
+    <p>
+        The game is played once and has 20 rounds:
+        The initial investment of all players in your group is set to zero.
+        In every round the investment increases by 10 points and you (and other players)
+        have to make a decision whether you want to invest additional 10 points
+        in the joint project or exit the game. Your final level of investment in the joint project
+        is determined by your investment level displayed on the page at the moment you exit the game.
+        If you exit the game, you cannot make investment any more decisions.
+    </p>
+    <p>
+        The earnings from the project are calculated as follows:
+        investments of all {{ Constants.players_per_group }} participants in your group are
+        added up and the total investment is multiplied by a factor of {{ Constants.multiplier }}.
+        The resulting amount is the individual share, which is
+        equal for all {{ Constants.players_per_group }}
+        participants.
+    </p>
+    <p>
+        <center>
+        <i>Income from the project = individual share = sum of investments in the project * {{ Constants.multiplier }}</i>
+        </center>
+    </p>
+    <p>
+        Your payoff equals your earnings from the project plus the amount you did not invest in the joint project.
+    </p>
+    <p>
+        <center>
+            <i> Earnings = ({{ Constants.endowment }} - investments in project) + {{ Constants.multiplier }} * sum of all investments in the project </i>
+        </center>
+    </p>
+
+</div>
+

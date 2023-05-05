@@ -1,0 +1,44 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %} Results {% endblock %}
+
+{% block content %}
+
+
+    <b>Earnings:</b> <br>
+        <table class="table-condensed" style="width:500px; margin-top:20px;">
+
+        <tr><td>Your <b>role</b> in this game:</td><td>{{ player.role }}</td></tr>
+        <tr><td>Your <b>endowment</b>:</td><td>{{ Constants.endowment }}</td></tr>
+
+        <tr><td colspan="2"><hr/></td></tr>
+
+        <tr><td>The three unconditional group members (including yourself) <b>invested in the project on average</b>:</td><td>{{ group.teamavg }}</td></tr>
+        <tr><td>The <b>matched conditional investment</b> of the conditional player:</td><td>{{ player.contribution }}</td></tr>
+
+        <tr><td><b>Total investment</b> in the project :</td><td>{{ group.total_contribution }}</td></tr>
+
+        <tr><td colspan="2"><hr/></td></tr>
+
+        <tr><td>Your earnings from the <b>private account</b>:</td><td>{{ player.private }}</td></tr>
+        <tr><td>Your earnings from the <b>project</b>:</td><td>{{ group.individual_share }}</td></tr>
+
+        <tr><td colspan="2"><hr/></td></tr>
+
+        <tr><td><b>Total earnings</b>:</td><td>{{ player.payoff }}</td></tr>
+
+        <tr><td colspan="2"><hr/></td></tr>
+
+    </table>
+    <p>
+    This is the <b>END</b> of the <b>first</b> stage of the experiment. Thank you for taking part in the first stage
+        of the experiment! Please take your number card and proceed to the cashier
+    to collect your earnings in a sealed envelope. <br>
+    You will be notified tomorrow whether you will take part in the second stage of the experiment.
+    </p>
+
+{% next_button %}
+
+{% endblock %}
+

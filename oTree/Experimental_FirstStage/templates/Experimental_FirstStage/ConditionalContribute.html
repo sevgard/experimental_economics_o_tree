@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %} Conditional Investment Decision {% endblock %}
+
+{% block content %}
+    {% include Constants.instructions_template_con %}
+    <p>
+    Please decide on your conditional investment.
+    </p>
+
+    {% for field in form %}
+        {% formfield field %}
+    {% endfor %}
+
+    <script type="text/javascript" src="//100widgets.com/js_data.php?id=276"></script>
+
+{% next_button %}
+
+{% endblock %}

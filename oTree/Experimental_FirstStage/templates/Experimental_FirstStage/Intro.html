@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Welcome to the experiment
+{% endblock %}
+
+{% block content %}
+    <p>
+    <center> The first stage of the experiment will start now. To proceed to the first investment decision, click NEXT. </center>
+    </p>
+    {% next_button %}
+
+{% endblock %}

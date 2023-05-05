@@ -1,0 +1,112 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+<style>
+div {
+    text-align: justify;
+    text-justify: inter-word;
+}
+</style>
+<div>
+
+
+    <center>
+        <b> The decision situation </b>
+    </center>
+    <p>
+        You will be a member of a group of {{Constants.group_size}} people. Each member has to decide on the division
+        of {{ Constants.endowment }} (your endowment). You can put these {{ Constants.endowment }} on a private account
+        or you can invest them fully or partially in a project. Each point you do not invest in the project will be
+        automatically transferred to your private account. The experiment is conducted only once.
+    </p>
+    <center>
+        <b> Income from the private account </b>
+    </center>
+    <p>
+        For each point that you put on your private account, you will earn exactly one point. For example, if you
+        put 200 points on your private account (which implies that you do not invest anything in the project) you
+        will earn exactly 200 points. If you put 60 points into the private account, you
+        will receive an income of 60 points from the private account.
+        Nobody except you earns something from your private account.
+    </p>
+    <center>
+        <b> Your income from the project </b>
+    </center>
+    <p>
+        From the number of points invested in the project each group member will get the same payoff, the so-called
+        individual share. For each group member the income from the project, so the individual share, will be determined as follows:
+    </p>
+    <p>
+        <center>
+            <i>Income from the project = individual share = sum of investments in the project * {{ Constants.multiplier }}</i>
+        </center>
+    </p>
+    <p>
+        For example, if the sum of all investments in the project is {{ Constants.endowment }}, then you and all your group members
+        get a payoff of {{ Constants.endowment }} x {{ Constants.multiplier }} = 100 points from the project.
+    </p>
+    <center>
+        <b> Total income </b>
+    </center>
+    <p>
+        Your total earnings are the sum of income from your private account and the project:
+    </p>
+    <p>
+        <center>
+            <i> Earnings = ({{ Constants.endowment }} - investments in the project) + {{ Constants.multiplier }} * sum of all investments in the project </i>
+        </center>
+    </p>
+    <center>
+        <b> Clock mechanism with no feedback </b>
+    </center>
+
+    <p>
+        In contrast to the first stage, the investment in the project is counted upwards like a clock.
+        The initial investment in the project is 0 points for every player in the group. Every 30 seconds
+        the investment increases by {{Constants.increment}} points. Every round you have to
+        make a decision whether to invest these additional {{Constants.increment}} points and stay
+        in the game or to exit the game. If you press <b>NO</b> button and exit the game, your final investment
+        in the project will be equal to the level of investment displayed on the page. If you press <b>YES</b>
+        button or do not press any button within 30 seconds, you automatically invest additional {{Constants.increment}}
+        points and proceed to the next round.
+    </p>
+    <p>
+        During the game players cannot observe whether one of their group members exited the game. A player who exited
+        the game cannot return to the game afterwards and should wait till other players finish the game.
+    </p>
+    <center>
+        <b> After the game ends </b>
+    </center>
+    <p>
+        After the last round the results of the game with your payoff (in points) will be displayed on a separate
+        page. After the game you will receive your payoff in a separate, sealed envelope.
+    </p>
+    <p>
+        During the experiment we will not speak of Euros but of (experimental) points.
+        Your entire earnings will be calculated in points. At the
+        end of the experiment the total number of points you have earned will be converted
+        to Euros at the following rate: <b>1 point = 0.05€ = 5 Eurocents</b>
+    </p>
+    <p>
+        You will be provided with on-screen calculator, pen and paper.
+    </p>
+    <p>
+        <b>Now please answer several questions to check whether you fully understand the rules.</b>
+    </p>
+    <p>
+        After answering the questions you will be randomly assigned to the groups and proceed to the main
+        part of the experiment.
+    </p>
+</div>
+    {% next_button %}
+
+
+{% endblock %}
+
+
+

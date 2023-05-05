@@ -1,0 +1,42 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Results of the Second stage of the game
+{% endblock %}
+
+{% block content %}
+
+    <table class="table-condensed" style="width:500px; margin-top:20px;">
+        <tr><td><b>Your endowment:</b></td><td>{{ Constants.endowment }}</td></tr>
+
+        <tr><td colspan="2"><hr/></td></tr>
+
+        <tr><td><b>You invested:</b></td><td>{{ player.contribution }}</td></tr>
+        <tr><td>Other participants invested:</td><td></td></tr>
+        {% for p in player.get_others_in_group %}
+            <tr><td></td><td>{{ p.contribution }}</td></tr>
+        {% endfor %}
+
+        <tr><td><b>Total investment:</b></td><td>{{ group.total_contribution }}</td></tr>
+
+        <tr><td colspan="2"><hr/></td></tr>
+
+        <tr><td>Your earnings from the <b>private account:</b></td><td>{{ private_account }}</td></tr>
+        <tr><td>Your earnings from the <b>project:</b></td><td>{{ group.individual_share }}</td></tr>
+
+        <tr><td colspan="2"><hr/></td></tr>
+
+        <tr><td><b>Total earnings</b>:</td><td>{{ player.payoff }}</td></tr>
+
+    </table>
+     <p></p>
+    <p>
+        This is the <b>END</b> of the <b>second</b> stage of the experiment. Thank you for taking part in the second stage
+        of the experiment! Please take your number card and proceed to the cashier
+    to collect your earnings in a sealed envelope.
+    </p>
+
+{% next_button %}
+
+{% endblock %}

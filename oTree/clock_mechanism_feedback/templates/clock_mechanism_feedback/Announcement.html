@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load staticfiles %}
+{% block styles %}
+    <style>
+        .otree-timer {
+            display: none;
+        }
+    </style>
+{% endblock %}
+{% block title %} Round {{Round_number}} {% endblock %}
+
+{% block content %}
+This is the current state in the game. Please press <b>Next</b> to proceed to the investment decision page.
+<p>
+    <table cellspacing="2" border="2.5" bordercolor = "red" cellpadding="5" width="80%">
+    <tr>
+        <th>Player</th><th>Player type</th><th>Invested so far</th><th>Left the game in round</th>
+    </tr>
+    <tr>
+        <td>You (Player {{player_number}})</td><td> {{player_type}}</td><td>{{player_investments}}</td><td>{{player_left}}</td>
+    </tr>
+    {% for p in player.get_others_in_group %}
+    <tr>
+        <td>Player {{ p.id_in_group }}</td>
+        <td>{{p.type}}</td>
+        <td>{{p.investments}}</td>
+        <td>{{p.left}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+</p>
+    {% next_button %}
+
+{% endblock %}

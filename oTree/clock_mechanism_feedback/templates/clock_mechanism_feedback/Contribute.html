@@ -1,0 +1,52 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load staticfiles %}
+
+{% block title %}
+    Round {{Round_number}}. Please, make your investment decision.
+{% endblock %}
+
+{% block content %}
+
+<p>
+    This is a game with {{ Constants.players_per_group }} players in your group,
+    an endowment of {{ Constants.endowment }}, and a social multiplier of {{ Constants.multiplier }}.
+</p>
+<p></p>
+    You are Player {{player_number}}.
+<p></p>
+
+<table class="table">
+    <tr>
+        <th>Player</th><th>Player Type</th><th>Invested so far</th><th>Left the game in round</th>
+    </tr>
+    <tr>
+        <td>You (Player {{player_number}})</td><td> {{player_type}}</td><td>{{player_investments}}</td><td>{{player_left}}</td>
+    </tr>
+    {% for p in player.get_others_in_group %}
+    <tr>
+        <td>Player {{ p.id_in_group }}</td>
+        <td>{{p.type}}</td>
+        <td>{{p.investments}}</td>
+        <td>{{p.left}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p><b>Do you wish to invest additional 10 points to the mutual project and continue the game?</b></p>
+<div>
+    <button name="choice" value=1 class="btn btn-primary btn-large">Yes</button>
+    <button name="choice" value=0 class="btn btn-primary btn-large">No</button>
+</div>
+
+<p></p>
+
+<table class="table">
+    <tr>
+        <td>{% include Constants.instructions_template %}</td>
+        <td><script type="text/javascript" src="//100widgets.com/js_data.php?id=276"></script></td>
+   </tr>
+</table>
+
+
+{% endblock %}

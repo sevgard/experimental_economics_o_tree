@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    The game is about to start
+{% endblock %}
+
+{% block content %}
+<p>
+    <b>You have been assigned to the group with {{type_A_quantity}} players of Type A and
+    {{type_B_quantity}} players of Type B.<br> Remember you have been classified as Type {{ player_type }}.</b>
+</p>
+<p>
+    Please, look at the instructions once again. If ready, please press <b>Next</b> and wait for other
+    players in your group to start the experiment.
+</p>
+<p>
+        {% include Constants.instructions_template %}
+</p>
+
+    {% next_button %}
+
+{% endblock %}

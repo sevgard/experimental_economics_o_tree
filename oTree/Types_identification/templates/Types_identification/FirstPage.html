@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Dear participant! Welcome to the second part of the experiment!
+{% endblock %}
+
+{% block content %}
+    To begin experiment please provide your candidate id number:
+    {% formfield player.id_number %}
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "global/Page.html" %}
+{% load otree staticfiles %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+    <p>
+        All participants will be divided in groups of four members. Except us, the experimenters,
+        nobody knows who is in which group. Unless you reveal how much you earned to the other participants of the experiment,
+        nobody except for us and you will get to know how much you earned.
+    </p>
+    <center>
+        <b> The decision situation </b>
+    </center>
+    <p>
+        You will be a member of a group of 4 people. Each member has to decide on the allocation of 200 points (your endowment).
+        You can put these 200 points on a private account or you can invest them fully or partially in a project.
+        Each point you do not invest in the project will be automatically transferred to your private account.
+        You make multiple decisions on your investment, but only one of them will be relevant for your earnings.
+        Which investment decision is going to be payoff-relevant is described below. The game in the first stage is conducted only once.
+
+    </p>
+    <center>
+        <b> Your income from the private account </b>
+    </center>
+    <p>
+        For each point that you put on your private account, you will earn exactly one point. For example, if you
+        put 200 points on your private account (which implies that you do not invest anything in the project) you
+        will earn exactly 200 points. If you put 60 points into the private account, you
+        will receive an income of 60 points from the private account.
+        Nobody except you earns something from your private account.
+    </p>
+    <center>
+        <b> Your income from the project </b>
+    </center>
+    <p>
+        From the number of points you invest in the project each group member will get the same payoff, the so-called
+        individual share. For each group member the income from the project, so the individual share, will be determined as follows:
+    </p>
+    <p>
+    <center>
+    Income from the project = individual share = sum of all investments in the project * 0.5
+    </center>
+    </p>
+    <p>
+    For example, if the sum of all investments in the project is 200 points, then you and all group members
+    get a payoff of 200 x 0.5 = 100 points from the project.
+    </p>
+    <center>
+        <b> Total income </b>
+    </center>
+    <p>
+        Your total earnings are the sum of income from your private account and the project:
+    </p>
+    <p>
+        <center> Earnings = (200 - investment in project) + 0.5 * sum of all investments in the project </center>
+    </p>
+    <p>
+    <center>
+        <b> Investment decision </b>
+    </center>
+    In the experiment, each subject has to make two types of decisions. In the following we will call them
+    "unconditional" and "conditional" investment. <br>
+    <b> Unconditional investment:</b> Here you decide on the investment in the project, regardless of how much
+        the other players in your group invest. <br>
+    <b> Conditional investment:</b> Here you make an investment decision depending on how much the other players in
+    your group invested on average. You will see 21 fields that ask you how much you would invest in the
+    project if the remaining three group members invested on average "x" points (rounded). "x" starts at "0 points" and increases
+    by "10 points" until "200 points".
+    </p>
+
+    <p>
+    You first make the unconditional investment decision and afterwards the conditional investment decisions.
+    You are assigned to one of two roles:
+    <br>
+    <b> Unconditional role:</b> For three out of the four group members, the unconditional investment is
+        taken for computing the earnings of the first stage of the experiment. <br>
+    <b> Conditional role:</b> For the remaining fourth group member, one conditional investment decision is
+        taken for computing the earnings of the first stage of the experiment. For this, the average unconditional investment
+        is computed for the three "unconditional" players. This average is rounded to the nearest multiple of 10 and then
+        matched with the respective conditional investment of the "conditional" player. <br>
+    When you make your unconditional investment
+        and conditional investment decisions, you of course do not know
+    know whether you will be selected by the random mechanism as the conditional player. You will therefore have to think
+    very carefully about both types of decisions because both can become relevant for you.
+    </p>
+    You will be provided with an on-screen calculator and pen and paper. <br>
+    <p> <b> Example: </b> Suppose you were chosen to be the conditional player. The other three team members' unconditional
+        investments are 60, 70, and 120. The average investment therefore is 250/3=83. This is rounded to the nearest multiple of
+        10, so 80. If you indicated in your conditional investment decisions that you would contribute 100 points if the rest
+        of the team invested on average 80 points, your investment to the project is 80 points.
+        Your earnings therefore are (200-80)+0.5*(60+70+120+100)=295 points.
+    </p>
+    {% next_button %}
+
+{% endblock %}
+

@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %} Unconditional Investment Decision {% endblock %}
+
+{% block content %}
+    {% include Constants.instructions_template_uncon %}
+
+    <p>
+    Please decide on your unconditional investment.
+    </p>
+
+    {% formfield player.contribution label="How much will you invest?" %}
+
+    <script type="text/javascript" src="//100widgets.com/js_data.php?id=276"></script>
+
+{% next_button %}
+
+{% endblock %}
